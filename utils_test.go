@@ -36,8 +36,8 @@ func TestIsSupportColor(t *testing.T) {
 	// IsSupport256Color
 	oldVal := os.Getenv("TERM")
 	_ = os.Unsetenv("TERM")
-	is.False(IsSupportColor())
-	is.False(IsSupport256Color())
+	is.True(IsSupportColor())
+	is.True(IsSupport256Color())
 
 	// ConEmuANSI
 	mockEnvValue("ConEmuANSI", "ON", func(_ string) {
